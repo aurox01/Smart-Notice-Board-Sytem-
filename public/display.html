@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Notice Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="new-notice-indicator" id="newNoticeAlert">
+        📢 New Notice Received!
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>🏢 Enterprise Notice Board</h1>
+            <p>Real-time updates for company announcements</p>
+            <div class="current-time" id="currentTime"></div>
+        </div>
+        
+        <div class="controls">
+            <button id="refreshBtn" class="btn btn-secondary">🔄 Refresh</button>
+            <select id="departmentFilter" class="filter-select">
+                <option value="all">All Departments</option>
+                <option value="General">General</option>
+                <option value="HR">HR</option>
+                <option value="IT">IT</option>
+                <option value="Finance">Finance</option>
+            </select>
+        </div>
+        
+        <div class="notice-grid" id="noticesContainer">
+            <div class="loading">Loading notices...</div>
+        </div>
+        
+        <div class="refresh-indicator">
+            Last updated: <span id="lastUpdate">Just now</span>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="display.js"></script>
+</body>
+</html>
